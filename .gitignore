@@ -53,7 +53,7 @@ typings/
 .yarn-integrity
 .env
 generator/ENV
-ENV
+ENV/
 
 .idea
 
