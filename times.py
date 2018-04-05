@@ -17,8 +17,7 @@ config = json.load(open('config.json'))
 def parse_time(text):
     parts, mins = text.strip().split(), 0
     if len(parts) == 2:
-        assert(parts[1] == 'мин')
-        mins += int(parts[0])
+        mins += int(parts[0]) if 'мин' in parts[1] else int(parts[0]) * 60
     elif len(parts) == 4:
         assert(parts[1] == 'ч' and parts[3] == 'мин')
         mins += int(parts[0]) * 60 + int(parts[2])
